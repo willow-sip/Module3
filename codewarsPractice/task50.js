@@ -3,8 +3,8 @@
 function isAgeDiverse(list) {
     let ageGroups = [];
 
-    for (let dev of list) {
-        let age = dev.age;
+    for (const dev of list) {
+        const age = dev.age;
         if (age >= 100) ageGroups.push("centenarian");
         else if (age >= 90) ageGroups.push("nineties");
         else if (age >= 80) ageGroups.push("eighties");

@@ -3,8 +3,11 @@
 function infiniteLoop(arr, d, n) {
     let fullArr = [].concat(arr[0], arr[1], arr[2]);
     for (let i = 0; i < n; i++) {
-
-        d === "left" ? fullArr.push(fullArr.shift()) : fullArr.unshift(fullArr.pop());
+        if(d === "left"){
+            fullArr.push(fullArr.shift());
+        } else{
+            fullArr.unshift(fullArr.pop());
+        }
     }
     let result = [];
     let index = 0;
