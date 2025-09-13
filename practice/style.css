@@ -1,0 +1,239 @@
+:root{
+    --light-color: #f2d1a7;
+    --darker-color: #b29166;
+    --darkest-color: #7d603a;
+}
+
+/* general styles */
+html, body {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+    font-family: "Assistant", sans-serif;
+}
+body {
+    margin: 0;
+    overflow: hidden;
+}
+main {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 60px);
+    flex-grow: 1;
+}
+section {
+    padding: 10px;
+    overflow-y: auto;
+}
+button{
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+#gallery-container, #image-add-section{
+    text-align: center;
+}
+
+/* form styles */
+#image-add-section{
+    background-color: var(--light-color);
+    padding-bottom: 20px;
+}
+#add-image-form{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.form-group{
+    display: flex;
+    align-items: center;
+    width: 40%;
+    gap: 10px;
+}
+/* input styles */
+#image-file {
+    display: none;
+}
+#add-to-gallery, .file-input-button {
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 10px 16px;
+    border-radius: 4px;
+    background-color: var(--darker-color);
+    transition: background-color 0.2s;
+}
+#add-to-gallery:hover, .file-input-button:hover {
+    background-color: var(--darkest-color);
+}
+.file-name-label {
+    margin-left: 10px;
+    font-size: 14px;
+    color: var(--darkest-color);
+    min-width: 150px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: none;
+}
+.file-name-label.visible {
+    display: inline-block;
+}
+#image-name {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    caret-color: var(--darker-color);
+    border-radius: 6px;
+    font-size: 14px;
+    margin-top: 4px;
+}
+#image-name:focus {
+    outline: none;
+    border-color: var(--darker-color);
+    box-shadow: 0 0 0 2px var(--darkest-color);
+}
+
+
+
+/* gallery field styles */
+#image-list-section {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    min-width: 30%;
+    height: 100%; 
+}
+#image-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card {
+    width: 200px;
+    border: 2px solid transparent;
+    text-align: center;
+    cursor: pointer;
+}
+.card.active {
+    border-color: var(--darker-color);
+    border-radius: 10px;
+}
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+#resizer {
+    width: 10px;
+    background: var(--darker-color);
+    cursor: ew-resize;
+    flex-shrink: 0;
+}
+
+
+/* perview field styles */
+#preview-section {
+    flex: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 20%;
+    overflow: hidden;
+    height: 100%;
+}
+
+#preview-controls {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+#preview-image {
+    max-width: 100%;
+    max-height: 80%;
+}
+#preview-caption {
+    margin-top: 5px;
+    font-style: italic;
+}
+
+#close-preview {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+    pointer-events: auto;
+}
+#close-preview,
+#previous-button,
+#next-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+
+/* all additional styles */
+nav {
+    margin-top: 10px;
+}
+
+nav button {
+    margin: 0 5px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+footer {
+    position: relative;
+}
+
+#scroll-top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    padding: 10px 17px 15px 17px;
+    font-size: 20px;
+    z-index: 100;
+    background-color: var(--darkest-color);
+    color: #fff;
+    border-radius: 50%;
+}
+
+#dragged-img-coords {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 6px 12px;
+    font-family: monospace;
+    font-size: 14px;
+    border-radius: 4px;
+    min-width: 120px;
+    text-align: right;
+    display: none;
+    z-index: 1000;
+}
+#dragged-img-coords.visible {
+    display: block;
+}

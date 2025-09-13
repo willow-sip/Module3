@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Image gallery</title>
+</head>
+
+<body>
+    <section id="image-add-section">
+        <h2 id="add-image-heading">Add your own image to gallery!</h2>
+        <form id="add-image-form">
+            <div class="form-group">
+                <label for="image-name">Image name: </label>
+                <input type="text" id="image-name" name="name" placeholder="Enter a name for the image" required>
+            </div>
+            <div class="form-group">
+                <label for="image-file">Image file: </label>
+                <input type="file" id="image-file" name="image" accept="image/jpeg, image/png, image/webp, image/gif"
+                    multiple="false" required>
+                <button type="button" id="add-file-button" class="file-input-button">
+                    Choose file
+                </button>
+                <span id="file-name-label" class="file-name-label"></span>
+                
+            </div>
+            <button type="submit" id="add-to-gallery">Add to gallery</button>
+        </form>
+    </section>
+
+    <main id="gallery-container">
+        <section id="image-list-section">
+            <h2>Image gallery</h2>
+            <ul id="image-list"></ul>
+        </section>
+
+        <div id="resizer"></div>
+
+        <section id="preview-section">
+            <h2>Preview area</h2>
+            <div id="preview-controls">
+                <button id="close-preview">╳</button>
+                <figure>
+                    <img id="preview-image" alt="image selected to preview" />
+                    <figcaption id="preview-caption">You didn't select an image from the galery</figcaption>
+                </figure>
+                <nav>
+                    <button id="previous-button">←</button>
+                    <button id="next-button">→</button>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <button id="scroll-top-button">↑</button>
+        <p id="dragged-img-coords"></p>
+    </footer>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
