@@ -2,6 +2,8 @@ import { state } from './data.js';
 import { closePreviewButton, prevImgButton, nextImgButton } from './dom-elements.js';
 import { cards, setActiveCard } from './card-creation.js';
 
+//those values are default because upin initial load there's
+//no loaded img, therefore there's nothing to switch for previous/next
 prevImgButton.disabled = true;
 nextImgButton.disabled = true;
 

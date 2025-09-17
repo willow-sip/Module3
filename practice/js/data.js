@@ -5,10 +5,13 @@ export const state = {
     activeIndex: null
 };
 
-for (let i = 0; i < 100; i++) {
-    state.allImages.push({
-        name: `Cat picture № ${i+1}`,
-        src: `./imgs/img${i+1}.jpg`,
-        alt: `Cat picture № ${i+1}`
-    });
+export function loadImages(count = 100) {
+    state.allImages.length = 0;
+    for (let i = 0; i < count; i++) {
+        state.allImages.push({
+            name: `Cat picture № ${i + 1}`,
+            src: `./imgs/img${i + 1}.jpg`,
+            alt: `Cat picture № ${i + 1}`
+        });
+    }
 }
